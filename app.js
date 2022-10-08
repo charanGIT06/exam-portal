@@ -104,9 +104,7 @@ let loadQuestion = function (qno, q) {
 };
 
 let prevQuestion = () => {
-  if (questionNumber == 0) {
-    alert("This is the first question");
-  } else {
+  if (questionNumber > 1) {
     questionNumber--;
     const currentQuestion = questionObjects[questionNumber];
     loadQuestion(questionNumber, currentQuestion);
@@ -114,9 +112,7 @@ let prevQuestion = () => {
 };
 
 let nextQuestion = () => {
-  if (questionNumber == questionObjects.length - 1) {
-    alert("This is the last question");
-  } else {
+  if (questionNumber < questionObjects.length - 1) {
     questionNumber++;
     const newQuestion = questionObjects[questionNumber];
     loadQuestion(questionNumber, newQuestion);
