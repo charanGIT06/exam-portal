@@ -5,8 +5,14 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
 }
+:root {
+    --blue: #14213d;
+    --lightBlue: #1d3557;
+    --verylightblue: #caf0f8;
+}
 nav {
     color: white;
+    background-color: var(--blue);
 }
 .main-heading, .submit-btn {
     text-decoration: none;
@@ -22,6 +28,9 @@ nav {
 .progress, .progress-bar {
     height: 2px;
 }
+.progress-bar {
+    background-color: var(--blue) !important;
+}
 .button-section {
     height: 40vh;
     column-gap: 0.5rem;
@@ -32,7 +41,25 @@ nav {
 .score-container {
     width: 200px;
     height: 200px;
-    border: 5px solid blue;
+    border: 5px solid var(--blue);
     border-radius: 100%;
+    background-color: var(--verylightblue);
+    color: var(--blue);
+}
+.btn-fill {
+    background-color: var(--blue) !important;
+    border-color: var(--blue) !important;
+}
+.btn-fill:hover {
+    background-color: var(--lightBlue) !important;
+}
+.btn-outline {
     background-color: transparent;
+    border-color: var(--blue) !important;
+    color: var(--blue);
+}
+.btn-outline:hover {
+    background-color: var(--lightBlue) !important;
+    border-color: var(--lightBlue) !important;
+    color: white !important;
 }
