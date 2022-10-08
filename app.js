@@ -1,3 +1,24 @@
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+const alert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
+
+const alertTrigger = document.getElementById('liveAlertBtn')
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', () => {
+    alert('Nice, you triggered this alert message!', 'success')
+  })
+}
+
 let questions = [
   {
     qid: 1,
@@ -16,6 +37,12 @@ let questions = [
     question: "What is the browser created by Google",
     options: ["Chrome", "Edge", "Brave", "Safari"],
     answer: "Chrome",
+  },
+  {
+    qid: 4,
+    question: "Who is known as the God of Cricket",
+    options: ["Dhoni", "Sachin Tendulkar", "Rahul Sharma", "Ashwin"],
+    answer: "Sachin Tendulkar",
   },
 ];
 
@@ -59,6 +86,9 @@ let saveOption = (optId) => {
 };
 
 let loadQuestion = function (qno, q) {
+  let counter = document.getElementById("question-counter");
+  let bar = document.getElementById("bar");
+
   let ques = document.getElementById("question");
   console.log(q);
   ques.innerText = q.question;
@@ -67,6 +97,10 @@ let loadQuestion = function (qno, q) {
     let opt = document.getElementById(`opt-lbl-${i + 1}`);
     opt.innerText = q.options[i];
   }
+
+  counter.innerText = `Question: ${qno + 1} / ${questionObjects.length}`;
+  let barPercentage = ((qno + 1) / questionObjects.length) * 100;
+  bar.style.width = `${barPercentage}%`;
 };
 
 let prevQuestion = () => {
@@ -90,23 +124,37 @@ let nextQuestion = () => {
 };
 
 let testScore = () => {
-  let points = 0
-  for(let i=0; i<questionObjects.length; i++) {
+  let points = 0;
+  for (let i = 0; i < questionObjects.length; i++) {
     let qid = questionObjects[i].qid;
 
-    console.log(responses[qid])
+    console.log(responses[qid]);
     if (questionObjects[i].answer === responses[qid]) {
       points++;
     }
   }
 
   return points;
-}
+};
 
 let testSubmit = () => {
-  let para = document.createElement('p');
-  para.textContent = testScore();
-  document.body.appendChild(para);
-}
+  let testZone = document.getElementById('test-zone');
+  let scoreSection = document.getElementById('score-section');
+  testZone.style.display = 'none';
+  scoreSection.style.display = 'block';
+
+  let scoreContainer = document.getElementById('score')
+  let points = testScore();
+  let score = `${points} / ${questionObjects.length}`;
+  scoreContainer.textContent = score;
+};
+
+window.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+  if (event.button == 2) {
+    alert("Right-Click is disabled!", "warning");
+  }
+});
+
 
 loadQuestion(0, questionObjects[questionNumber]);

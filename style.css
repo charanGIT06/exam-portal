@@ -5,3 +5,34 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
 }
+nav {
+    color: white;
+}
+.main-heading, .submit-btn {
+    text-decoration: none;
+    color: white;
+}
+:is(.main-heading, .submit-btn):hover {
+    text-decoration: underline;
+    color: white;
+}
+.btn {
+    width: 140px;
+}
+.progress, .progress-bar {
+    height: 2px;
+}
+.button-section {
+    height: 40vh;
+    column-gap: 0.5rem;
+}
+.score-section {
+    display: none;
+}
+.score-container {
+    width: 200px;
+    height: 200px;
+    border: 5px solid blue;
+    border-radius: 100%;
+    background-color: transparent;
+}
