@@ -461,6 +461,22 @@ let setIntroPage = () => {
   introPage.style.display = "block";
 };
 // --------------------------------------------------------------------------------------------------
+// fullscreen code
+var elem = document.getElementById("exam");
+
+/* When the openFullscreen() function is executed, open the video in fullscreen.
+        Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
 // Right-Click disable code
 const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
 
@@ -482,12 +498,6 @@ if (alertTrigger) {
     alert("Nice, you triggered this alert message!", "success");
   });
 }
-window.addEventListener("contextmenu", (event) => {
-  event.preventDefault();
-  if (event.button == 2) {
-    alert("Right-Click is disabled!", "warning");
-  }
-});
 
 // --------------------------------------------------------------------------------------------------
 
@@ -512,7 +522,7 @@ let loadQuestion = function (qno, q) {
   let question = document.createElement("h5");
   question.className = "question";
   question.id = "question";
-  question.classList.add("unselectable")
+  question.classList.add("unselectable");
   question.textContent = q.question;
   questionSection.innerHTML = "";
   questionSection.appendChild(question);
@@ -632,6 +642,7 @@ let testSubmit = () => {
 };
 
 let startTest = (testName) => {
+  openFullscreen();
   let name = testName.slice(4);
   let qBank = JSON.parse(localStorage.getItem("questionBank"));
 
