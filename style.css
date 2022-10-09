@@ -49,6 +49,7 @@ nav {
 .btn-fill {
     background-color: var(--blue) !important;
     border-color: var(--blue) !important;
+    color: white !important;
 }
 .btn-fill:hover {
     background-color: var(--lightBlue) !important;
@@ -62,4 +63,22 @@ nav {
     background-color: var(--lightBlue) !important;
     border-color: var(--lightBlue) !important;
     color: white !important;
+}
+.language {
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+}
+.language-container {
+    width: 150px;
+    height: 150px;
+    border: 5px solid var(--blue);
+    border-radius: 100%;
+    background-color: var(--verylightblue);
+    color: var(--blue);
+}
+#test-zone {
+    display: none;
+}
+.submit-btn {
+    display: none;
 }

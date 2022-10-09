@@ -13,8 +13,52 @@
     <nav class="d-flex p-3">
         <a href="" class="main-heading"><p class="m-0">CEP</p></a>
         <p class="test-name ms-auto me-auto m-0">Quiz</p>
-        <a class="submit-btn" onclick="testSubmit()">SUBMIT</a>
+        <a class="submit-btn" id="submit-btn" onclick="testSubmit()">SUBMIT</a>
     </nav>
+    <div class="intro-page p-3" id="intro-page">
+        <h1 class="intro-heading text-center mt-5">Welcome to CEP</h1>
+        <p class="text-center mt-3 mb-5">Select language of your choice to start test</p>
+        <div class="container">
+            <div class="row gx-4 gy-4">
+                <div class="col-12 col-md-3">
+                    <div class=" language d-flex flex-column align-items-center text-center shadow p-4">
+                        <div class="language-container d-flex flex-row justify-content-center align-items-center shadow mb-4">
+                            <h4>Java</h4>
+                        </div>
+                        <button class="btn btn-fill mb-3" id="btn-java" onclick="startTest(this.id)">Start Test</button>
+                        <p id="java-prev-score">Previous Score</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class=" language d-flex flex-column align-items-center text-center shadow p-4">
+                        <div class="language-container d-flex flex-row justify-content-center align-items-center shadow mb-4">
+                            <h4>C++</h4>
+                        </div>
+                        <button class="btn btn-fill mb-3" id="btn-cpp" onclick="startTest(this.id)">Start Test</button>
+                        <p id="cpp-prev-score">Previous Score</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class=" language d-flex flex-column align-items-center text-center shadow p-4">
+                        <div class="language-container d-flex flex-row justify-content-center align-items-center shadow mb-4">
+                            <h4>Python</h4>
+                        </div>
+                        <button class="btn btn-fill mb-3" id="btn-python" onclick="startTest(this.id)">Start Test</button>
+                        <p id="python-prev-score">Previous Score</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class=" language d-flex flex-column align-items-center text-center shadow p-4">
+                        <div class="language-container d-flex flex-row justify-content-center align-items-center shadow mb-4">
+                            <h4>Java Script</h4>
+                        </div>
+                        <button class="btn btn-fill mb-3" id="btn-javascript" onclick="startTest(this.id)">Start Test</button>
+                        <p id="javascript-prev-score">Previous Score</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container" id="test-zone">
         <div class="row mx-auto mt-3 mb-5">
             <div id="liveAlertPlaceholder"></div>
@@ -24,19 +68,19 @@
                   </div>
                 <p id="question-counter"></p>
             </div>
-            <div class="col-12 col-md-6 question-section mb-3">
-                <h5 id="question"></h5>
+            <div class="col-12 col-md-6 question-section mb-3" id="question-section">
+                <!-- <h5 id="question"></h5> -->
             </div>
-            <div class="col-12 col-md-6 answer-section">
-                <h5>Select one option from below</h5>
-                <input type="radio" id="opt-1" name="question" onclick="saveOption(this.id)">
+            <div class="col-12 col-md-6 answer-section" id="answer-section">
+                <!-- <h5>Select one option from below</h5> -->
+                <!-- <input type="radio" id="opt-1" name="question" onclick="saveOption(this.id)">
                 <label id="opt-lbl-1" for="opt-1"></label> <br>
                 <input type="radio" id="opt-2" name="question" onclick="saveOption(this.id)">
                 <label id="opt-lbl-2" for="opt-2"></label> <br>
                 <input type="radio" id="opt-3" name="question" onclick="saveOption(this.id)">
                 <label id="opt-lbl-3" for="opt-3"></label> <br>
                 <input type="radio" id="opt-4" name="question" onclick="saveOption(this.id)">
-                <label id="opt-lbl-4" for="opt-4"></label> <br>
+                <label id="opt-lbl-4" for="opt-4"></label> <br> -->
             </div>
             <div class="col-12 d-flex flex-row justify-content-center align-items-end text-center button-section mb-5">
                 <button class="btn btn-outline" id="prev" onclick="prevQuestion()">PREVIOUS</button>
@@ -48,7 +92,7 @@
         <h1>RESULT</h1>
         <p class="mt-5 mb-4">Your score is:</p>
         <div class="d-flex flex-row justify-content-center">
-            <div class="score-container d-flex flex-row justify-content-center align-items-center">
+            <div class="score-container d-flex flex-row justify-content-center align-items-center shadow">
                 <h1 id="score"></h1>
             </div>
         </div>
