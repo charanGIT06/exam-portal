@@ -49,7 +49,7 @@ let setDataToLocalStorage = () => {
         "Use of exception handling",
         "Dynamic binding between objects",
       ],
-      answer: "Bytecode is executed by the JVM",
+      answer: "Bytecode is executed by JVM",
     },
     {
       qid: 2,
@@ -68,37 +68,375 @@ let setDataToLocalStorage = () => {
       options: ["JVM", "JRE", "JDK", "JDB"],
       answer: "JDB",
     },
+    {
+      qid: 4,
+      question: "Which of the following is a reserved keyword in Java?",
+      options: ["object", "strictfp", "main", "system"],
+      answer: "strictfp",
+    },
+    {
+      qid: 5,
+      question: "What do you mean by nameless objects?",
+      options: [
+        "An object created by using the new keyword.",
+        "An object of a superclass created in the subclass.",
+        "An object without having any name but having a reference.",
+        "An object that has no reference.",
+      ],
+      answer: "An object that has no reference.",
+    },
+    {
+      qid: 6,
+      question: "Which option is false about the final keyword?",
+      options: [
+        "A final method cannot be overridden in its subclasses.",
+        "A final class cannot be extended.",
+        "A final class cannot extend other classes.",
+        "A final method can be inherited.",
+      ],
+      answer: "A final method can be inherited.",
+    },
+    {
+      qid: 7,
+      question:
+        "Which of these classes are the direct subclasses of the Throwable class?",
+      options: [
+        "RuntimeException and Error class",
+        "Exception and VirtualMachineError class",
+        "Error and Exception class",
+        "IOException and VirtualMachineError class",
+      ],
+      answer: "Error and Exception class",
+    },
+    {
+      qid: 8,
+      question:
+        "In which memory a String is stored, when we create a string using new operator?",
+      options: [
+        "Stack",
+        "String memory",
+        "Heap memory",
+        "Random storage space",
+      ],
+      answer: "Heap memory",
+    },
+    {
+      qid: 9,
+      question: "What is the use of the intern() method?",
+      options: [
+        "It returns the existing string from memory",
+        "It creates a new string in the database",
+        "It modifies the existing string in the database",
+        "None of the above",
+      ],
+      answer: "It returns the existing string from memory",
+    },
+    {
+      qid: 10,
+      question: "In java, jar stands for_____.",
+      options: [
+        "Java Archive Runner",
+        "Java Application Resource",
+        "Java Application Runner",
+        "None of the above",
+      ],
+      answer: "None of the above",
+    },
+  ];
+
+  questionBank.cpp = [
+    {
+      qid: 1,
+      question: "The C++ language is ______ object-oriented language.",
+      options: [
+        "Pure Object oriented",
+        "Not Object oriented",
+        "Semi Object-oriented or Partial Object-oriented",
+        "None of the above",
+      ],
+      answer: "Semi Object-oriented or Partial Object-oriented",
+    },
+    {
+      qid: 2,
+      question:
+        "Which of the following statements is correct about the formal parameters in C++?",
+      options: [
+        "Parameters with which functions are called",
+        "Parameters which are used in the definition of the function",
+        "Variables other than passed parameters in a function",
+        "Variables that are never used in the function",
+      ],
+      answer: "Parameters with which functions are called",
+    },
+    {
+      qid: 3,
+      question:
+        "Which of the following features is required to be supported by the programming language to become a pure object-oriented programming language?",
+      options: [
+        "Encapsulation",
+        "Inheritance",
+        "Polymorphism",
+        "All of the above",
+      ],
+      answer: "All of the above",
+    },
+    {
+      qid: 4,
+      question: "C++ is a ___ type of language.",
+      options: [
+        "High-level Language",
+        "Low-level language",
+        "Middle-level language",
+        "None of the above",
+      ],
+      answer: "Middle-level language",
+    },
+    {
+      qid: 5,
+      question:
+        "If we stored five elements or data items in an array, what will be the index address or the index number of the array's last data item?",
+      options: ["3", "5", "4", "88"],
+      answer: "4",
+    },
+    {
+      qid: 6,
+      question:
+        "Which of the following is the correct syntax for declaring the array?",
+      options: [
+        "init array []",
+        "int array [5];",
+        "Array[5];",
+        "None of the above",
+      ],
+      answer: "int array [5];",
+    },
+    {
+      qid: 7,
+      question:
+        "Which of the following is the correct syntax for printing the address of the first element?",
+      options: ["array[0];", "array[1];", "array[2];", "None of the above"],
+      answer: "array[0];",
+    },
+    {
+      qid: 8,
+      question:
+        "How many types of the array are there in the C++ programming language?",
+      options: [
+        "In the C++ programming language, there are three types of arrays",
+        "In the C++ programming language, there are four types of arrays",
+        "In the C++ programming language, there are two types of arrays",
+        "Both A and B",
+      ],
+      answer: "In the C++ programming language, there are two types of arrays",
+    },
+    {
+      qid: 9,
+      question: "In C++, for what purpose the 'rank()' is used?",
+      options: [
+        "It returns the size of each dimension",
+        "It returns the maximum number of elements that can be stored in the array",
+        "It returns the dimension of the specified array",
+        "None of the above",
+      ],
+      answer: "It returns the dimension of the specified array",
+    },
+    {
+      qid: 10,
+      question: "Which types of arrays are always considered as linear arrays?",
+      options: [
+        "Single-dimensional",
+        "Multi-dimensional",
+        "Both A and B",
+        "None of the above",
+      ],
+      answer: "Single-dimensional",
+    },
+  ];
+
+  questionBank.python = [
+    {
+      qid: 1,
+      question: "What is the maximum possible length of an identifier?",
+      options: ["16", "32", "64", "None of these above"],
+      answer: "",
+    },
+    {
+      qid: 2,
+      question: "Who developed the Python language?",
+      options: ["Zim Den", "Guido van Rossum", "Niene Stom", "Wick van Rossum"],
+      answer: "Guido van Rossum",
+    },
+    {
+      qid: 3,
+      question: "In which language is Python written?",
+      options: ["English", "PHP", "C", "All of the above"],
+      answer: "C",
+    },
+    {
+      qid: 4,
+      question: "What do we use to define a block of code in Python language?",
+      options: ["Key", "Brackets", "Indentation", "None of these"],
+      answer: "Indentation",
+    },
+    {
+      qid: 5,
+      question: "What is the method inside the class in python language?",
+      options: ["Object", "Function", "Attribute", "Argument"],
+      answer: "Function",
+    },
+    {
+      qid: 6,
+      question: "12) Which of the following declarations is incorrect?",
+      options: ["_x = 2", "__x = 3", "__xyz__ = 5", "None of these"],
+      answer: "None of these",
+    },
+    {
+      qid: 7,
+      question:
+        "Which of the following option is not a core data type in the python language?",
+      options: ["Dictionary", "Lists", "Class", "All of the above"],
+      answer: "Class",
+    },
+    {
+      qid: 8,
+      question: "What happens when '2' == 2 is executed?",
+      options: ["False", "True", "ValueError occurs", "TypeError occurs"],
+      answer: "False",
+    },
+    {
+      qid: 9,
+      question:
+        "'print(True ** False / True)' What will be the output of this program?",
+      options: [
+        "True ** False / True",
+        "1.0",
+        "1 ** 0 / 1",
+        "None of the these",
+      ],
+      answer: "1.0",
+    },
+    {
+      qid: 10,
+      question:
+        "Which of the following arithmetic operators cannot be used with strings in python?",
+      options: ["+", "*", "-", "All of the mentioned"],
+      answer: "-",
+    },
   ];
 
   questionBank.javascript = [
     {
       qid: 1,
-      question: "Which one of the following is a scripting language?",
-      options: ["Java", "Python", "C++", "Java Script"],
-      answer: "Java Script",
+      question: "Which type of JavaScript language is ___",
+      options: [
+        "Object-Oriented",
+        "Object-Based",
+        "Assembly-language",
+        "High-level",
+      ],
+      answer: "Object-Based",
     },
     {
       qid: 2,
-      question: "Which one is spelled correct",
-      options: ["Red", "Reed", "Redd", "Rid"],
-      answer: "Red",
+      question:
+        "Which one of the following also known as Conditional Expression:",
+      options: [
+        "Alternative to if-else",
+        "Switch statement",
+        "If-then-else statement",
+        "immediate if",
+      ],
+      answer: "immediate if",
     },
     {
       qid: 3,
-      question: "What is the browser created by Google",
-      options: ["Chrome", "Edge", "Brave", "Safari"],
-      answer: "Chrome",
+      question: "In JavaScript, what is a block of statement?",
+      options: [
+        "Conditional block",
+        "block that combines a number of statements into a single compound statement",
+        "both conditional block and a single statement",
+        "block that contains a single statement",
+      ],
+      answer:
+        "block that combines a number of statements into a single compound statement",
     },
     {
       qid: 4,
-      question: "Who is known as the God of Cricket",
-      options: ["Dhoni", "Sachin Tendulkar", "Rahul Sharma", "Ashwin"],
-      answer: "Sachin Tendulkar",
+      question:
+        "When interpreter encounters an empty statements, what it will do:",
+      options: [
+        "Shows a warning",
+        "Prompts to complete the statement",
+        "Throws an error",
+        "Ignores the statements",
+      ],
+      answer: "Ignores the statements",
+    },
+    {
+      qid: 5,
+      question: "The 'function' and 'var' are known as:",
+      options: [
+        "Keywords",
+        "Data types",
+        "Declaration statements",
+        "Prototypes",
+      ],
+      answer: "Declaration statements",
+    },
+    {
+      qid: 6,
+      question:
+        "Which of the following variables takes precedence over the others if the names are the same?",
+      options: [
+        "Global variable",
+        "The local element",
+        "The two of the above",
+        "None of the above",
+      ],
+      answer: "",
+    },
+    {
+      qid: 7,
+      question:
+        "Which one of the following is the correct way for calling the JavaScript code?",
+      options: ["Preprocessor", "Triggering Event", "RMI", "Function/Method"],
+      answer: "Function/Method",
+    },
+    {
+      qid: 8,
+      question: "Which of the following type of a variable is volatile?",
+      options: [
+        "Mutable variable",
+        "Dynamic variable",
+        "Volatile variable",
+        "Immutable variable",
+      ],
+      answer: "Mutable variable",
+    },
+    {
+      qid: 9,
+      question:
+        "Which of the following option is used as hexadecimal literal beginning?",
+      options: ["00", "0x", "0X", "Both 0x and 0X"],
+      answer: "Both 0x and 0X",
+    },
+    {
+      qid: 10,
+      question:
+        "In the JavaScript, which one of the following is not considered as an error:",
+      options: [
+        "Syntax error",
+        "Missing of semicolons",
+        "Division by zero",
+        "Missing of Bracket",
+      ],
+      answer: "Division by zero",
     },
   ];
 
   localStorage.setItem("questionBank", JSON.stringify(questionBank));
 };
+
 // --------------------------------------------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------------------
@@ -113,6 +451,14 @@ let setQuestions = () => {
     questionObjects[i] = new Question(qid, question, options, answer);
   }
   totalQuestions = questionObjects.length;
+};
+
+let setIntroPage = () => {
+  let welcomePage = document.getElementById("welcome-page");
+  let introPage = document.getElementById("intro-page");
+
+  welcomePage.style.display = "none";
+  introPage.style.display = "block";
 };
 // --------------------------------------------------------------------------------------------------
 // Right-Click disable code
@@ -166,6 +512,7 @@ let loadQuestion = function (qno, q) {
   let question = document.createElement("h5");
   question.className = "question";
   question.id = "question";
+  question.classList.add("unselectable")
   question.textContent = q.question;
   questionSection.innerHTML = "";
   questionSection.appendChild(question);
@@ -197,7 +544,9 @@ let loadQuestion = function (qno, q) {
     option.id = optionId;
 
     optionLabel.id = labelId;
-    optionLabel.for = optionId;
+    optionLabel.setAttribute("for", optionId);
+    optionLabel.classList.add("ps-2");
+    optionLabel.classList.add("unselectable");
     optionLabel.innerText = q.options[i];
 
     optionContainer.appendChild(option);
@@ -292,10 +641,12 @@ let startTest = (testName) => {
   let introPage = document.getElementById("intro-page");
   let testZone = document.getElementById("test-zone");
   let submitBtn = document.getElementById("submit-btn");
+  let navTitle = document.getElementById("nav-exam-title");
 
   introPage.style.display = "none";
   testZone.style.display = "block";
   submitBtn.style.display = "inline";
+  navTitle.innerText = `${name} exam`.toUpperCase();
 
   setQuestions();
   loadQuestion(0, questionObjects[questionNumber]);
