@@ -5,6 +5,7 @@ The aim of this project is a create a website that allowers user to select a pro
 - HTML
 - CSS
 - Java Script
+- Bootstrap
 
 ### Features
 - All the data is stored in the user's computer via **localStorage**.
