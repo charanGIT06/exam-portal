@@ -7,9 +7,9 @@ The aim of this project is a create a website that allowers user to select a pro
 - Java Script
 
 ### Features
-- All the data is stored in the user's computer via localStorage.
-- Previous scores of every test will be stored and can be viewed later.
-- Browser opens fullscreen once the exam starts
+- All the data is stored in the user's computer via **localStorage**.
+- **Previous scores** of every test will be stored and can be viewed later.
+- Browser opens **fullscreen** once the exam starts
 - **Right Mouse Click** is disabled
 - **Cut, Copy, Paste** of questions is disabled
 
