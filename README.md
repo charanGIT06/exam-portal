@@ -1,5 +1,5 @@
 # exam-portal
-The aim of this project is a create a website that allowers user to select a programming language and take the test.
+The aim of this project is a create a website that allows user to select a programming language and take the test.
 
 ### Technologies Used
 - HTML
