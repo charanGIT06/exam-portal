@@ -4,6 +4,7 @@
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
+    pointer-events: none;
 }
 :root {
     --blue: #14213d;
@@ -13,6 +14,8 @@ h1, h2, h3, h4, h5, h6, p {
 nav {
     color: white;
     background-color: var(--blue);
+    position: sticky;
+    top: 0;
 }
 .main-heading, .submit-btn {
     text-decoration: none;
