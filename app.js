@@ -621,6 +621,57 @@ let testScore = () => {
   return points;
 };
 
+function addLeadingZeros(num, totalLength) {
+  return String(num).padStart(totalLength, "0");
+}
+
+let startTimer = () => {
+  const timer = document.getElementById("timer");
+
+  let startTime = new Date();
+  let endTime = new Date();
+
+  startTime.setHours(0);
+  startTime.setMinutes(0);
+  startTime.setSeconds(0);
+
+  endTime.setHours(0);
+  endTime.setMinutes(0);
+  endTime.setSeconds(0);
+
+  endTime.setMinutes(startTime.getMinutes() + 10);
+
+  let sec = 0;
+
+  var x = setInterval(() => {
+    endTime.setSeconds(endTime.getSeconds() - 1);
+    sec++;
+
+    timer.innerText = `TIME: ${String(endTime.getHours()).padStart(
+      2,
+      "0"
+    )} : ${String(endTime.getMinutes()).padStart(2, "0")} : ${String(
+      endTime.getSeconds()
+    ).padStart(2, "0")}`;
+
+    console.log(endTime.getTime());
+
+    if (endTime.getHours() + endTime.getMinutes() + endTime.getSeconds() == 0) {
+      alert("TEST COMPLETED");
+      testSubmit();
+      clearInterval(x);
+    }
+
+    if (
+      endTime.getHours() == 0 &&
+      endTime.getMinutes() == 0 &&
+      endTime.getSeconds() <= 60
+    ) {
+      timer.style.color = "red";
+    }
+  }, 1000);
+};
+
 let testSubmit = () => {
   let testZone = document.getElementById("test-zone");
   let scoreSection = document.getElementById("score-section");
@@ -658,6 +709,7 @@ let startTest = (testName) => {
   submitBtn.style.display = "inline";
   navTitle.innerText = `${name} exam`.toUpperCase();
 
+  startTimer();
   setQuestions();
   loadQuestion(0, questionObjects[questionNumber]);
 };
