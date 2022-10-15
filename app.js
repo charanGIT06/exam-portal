@@ -42,7 +42,7 @@ let setDataToLocalStorage = () => {
     {
       qid: 1,
       question:
-        "Which of the following option leads to the portability and security of Java?",
+      "Which of the following option leads to the portability and security of Java?", 
       options: [
         "Bytecode is executed by JVM",
         "The applet makes the Java code secure and portable",
@@ -567,9 +567,6 @@ let loadQuestion = function (qno, q) {
     answerSection.append(optionContainer);
 
     option.onclick = () => {
-      // if(option.checked) {
-      //   optionContainer.backgroundColor = "red";
-      // }
       saveOption(optionId);
     };
   }
@@ -580,20 +577,35 @@ let loadQuestion = function (qno, q) {
 };
 
 let prevQuestion = () => {
+  const submitBtn = document.getElementById('submit');
+  const next = document.getElementById('next');
+
   if (questionNumber + 1 > 1) {
     questionNumber--;
     const currentQuestion = questionObjects[questionNumber];
     loadQuestion(questionNumber, currentQuestion);
   }
+  if (questionNumber < totalQuestions - 1) {
+    submitBtn.className = "d-none";
+    next.style.display = "block";
+  }
 };
 
 let nextQuestion = () => {
+  const submitBtn = document.getElementById('submit');
+  const next = document.getElementById('next');
+  
   if (questionNumber < totalQuestions - 1) {
     questionNumber++;
     const newQuestion = questionObjects[questionNumber];
     loadQuestion(questionNumber, newQuestion);
   }
-};
+
+  if (questionNumber == totalQuestions - 1) {
+    next.style.display = "none";
+    submitBtn.className = "btn btn-fill btn-primary d-inline";
+  }
+}; 
 
 let setPreviousScores = () => {
   let scores = JSON.parse(localStorage.getItem("previousScores"));
@@ -662,7 +674,6 @@ let startTimer = () => {
     ).padStart(2, "0")}`;
 
     if (endTime.getHours() + endTime.getMinutes() + endTime.getSeconds() == 0) {
-      alert("TEST COMPLETED");
       testSubmit();
       clearInterval(x);
     }
@@ -677,23 +688,70 @@ let startTimer = () => {
   }, 1000);
 };
 
+let submitConfirmation = () => {
+
+  const exam = document.getElementById('exam')
+  const banner = document.createElement('div');
+  const msg = document.createElement('div');
+  const btnContainer = document.createElement('div');
+  const okBtn = document.createElement('button');
+  const cancelBtn = document.createElement('button');
+  const messageText = document.createElement('h4');
+
+  banner.classList.add("banner");
+  msg.classList.add('msg');
+  okBtn.className = "btn btn-fill btn-primary";
+  okBtn.classList.add('ok-btn');
+  okBtn.id = 'ok-btn';
+  cancelBtn.className = "btn btn-outline bg-white";
+  cancelBtn.classList.add('cancel-btn');
+  cancelBtn.id = 'cancel-btn';
+  messageText.id = "msg-txt";
+  messageText.className = "msg-txt";
+
+  messageText.innerText = "Are you sure to Submit?";
+  messageText.style.padding = "2rem";
+  btnContainer.style.paddingBottom = "2rem";
+  btnContainer.classList.add("text-center")
+  okBtn.innerText = "Ok";
+  cancelBtn.innerText = "Cancel"
+  okBtn.style.margin = "0.2rem";
+  cancelBtn.style.margin = "0.2rem";
+
+  okBtn.onclick = () => {
+    banner.style.display = "none";
+    testSubmit();
+  }
+  cancelBtn.onclick = () => {
+    banner.style.display = "none";
+  }
+  
+  btnContainer.append(cancelBtn);
+  btnContainer.append(okBtn);
+  msg.append(messageText);
+  msg.append(btnContainer);
+  banner.append(msg);
+  exam.appendChild(banner);
+
+}
+
 let testSubmit = () => {
-  let testZone = document.getElementById("test-zone");
-  let scoreSection = document.getElementById("score-section");
-  let submitBtn = document.getElementById("submit-btn");
-  let scores = JSON.parse(localStorage.getItem("previousScores"));
+    let testZone = document.getElementById("test-zone");
+    let scoreSection = document.getElementById("score-section");
+    let submitBtn = document.getElementById("submit-btn");
+    let scores = JSON.parse(localStorage.getItem("previousScores"));
 
-  testZone.style.display = "none";
-  scoreSection.style.display = "block";
-  submitBtn.style.display = "none";
+    testZone.style.display = "none";
+    scoreSection.style.display = "block";
+    submitBtn.style.display = "none";
 
-  let scoreContainer = document.getElementById("score");
-  let points = testScore();
-  let score = `${points} / ${totalQuestions}`;
-  scoreContainer.textContent = score;
+    let scoreContainer = document.getElementById("score");
+    let points = testScore();
+    let score = `${points} / ${totalQuestions}`;
+    scoreContainer.textContent = score;
 
-  scores[test] = score;
-  localStorage.setItem("previousScores", JSON.stringify(scores));
+    scores[test] = score;
+    localStorage.setItem("previousScores", JSON.stringify(scores));
 };
 
 let startTest = (testName) => {
