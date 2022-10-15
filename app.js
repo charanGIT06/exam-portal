@@ -526,11 +526,13 @@ let loadQuestion = function (qno, q) {
   questionSection.innerHTML = "";
   questionSection.appendChild(question);
 
-  let answerSectionHeading = document.createElement("h5");
+  let answerSectionHeading = document.createElement("h6");
 
   answerSection.innerHTML = "";
   answerSectionHeading.innerText = "Select one option from below";
   answerSection.appendChild(answerSectionHeading);
+  answerSection.classList.add("mb-5");
+  answerSection.classList.add("pb-5");
 
   let counter = document.getElementById("question-counter");
   let bar = document.getElementById("bar");
@@ -540,18 +542,20 @@ let loadQuestion = function (qno, q) {
     let option = document.createElement("input");
     let optionLabel = document.createElement("label");
 
-    optionContainer.class = "option-container";
+    optionContainer.className = "option-container";
     optionContainer.id = "option-container";
-
+    optionContainer.classList.add("rounded");
+    optionContainer.classList.add("mb-2");
+    
     option.type = "radio";
     option.name = "question";
     option.innerText = q.question[i];
-
+    
     let optionId = `opt-${i + 1}`;
     let labelId = `opt-lbl-${i + 1}`;
-
+    
     option.id = optionId;
-
+    
     optionLabel.id = labelId;
     optionLabel.setAttribute("for", optionId);
     optionLabel.classList.add("ps-2");
@@ -563,6 +567,9 @@ let loadQuestion = function (qno, q) {
     answerSection.append(optionContainer);
 
     option.onclick = () => {
+      // if(option.checked) {
+      //   optionContainer.backgroundColor = "red";
+      // }
       saveOption(optionId);
     };
   }
@@ -653,8 +660,6 @@ let startTimer = () => {
     )} : ${String(endTime.getMinutes()).padStart(2, "0")} : ${String(
       endTime.getSeconds()
     ).padStart(2, "0")}`;
-
-    console.log(endTime.getTime());
 
     if (endTime.getHours() + endTime.getMinutes() + endTime.getSeconds() == 0) {
       alert("TEST COMPLETED");
