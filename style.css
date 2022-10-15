@@ -44,6 +44,8 @@ nav {
 }
 #test-zone {
   display: none;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 .btn {
   width: 140px;
@@ -55,8 +57,8 @@ nav {
 .progress-bar {
   background-color: var(--blue) !important;
 }
-#question-section {
-  height: 50vh;
+#question-section, #answer-section {
+  max-height: 50vh;
   overflow-y: auto;
 }
 .button-section {
