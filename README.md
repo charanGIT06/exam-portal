@@ -28,7 +28,7 @@ https://mcq-zone.netlify.app/
 
 3. Test Page
 
-![image](https://user-images.githubusercontent.com/96834040/194767477-88e986a0-04a6-455b-be1d-4f9faf895c1b.png)
+![image](https://user-images.githubusercontent.com/96834040/196000976-ff7dacfc-3925-49e4-b4c7-2e37320692c1.png)
 
 
 4. Result Page
