@@ -1,7 +1,3 @@
-import { key, domain } from "./creds.js"
-
-console.log(key+" "+domain);
-
 let questions = [];
 
 let questionNumber = 0;
