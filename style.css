@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Zen+Antique&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -11,6 +13,7 @@ p {
   margin: 0;
   padding: 0;
   pointer-events: none;
+  font-family: 'Roboto', sans-serif;
 }
 :root {
   --blue: #14213d;
@@ -22,6 +25,11 @@ nav {
   background-color: var(--blue);
   position: sticky;
   top: 0;
+}
+.cont {
+  width: 100%;
+  background-color: var(--blue);
+  max-width: 1200px;
 }
 .main-heading,
 .submit-btn {
@@ -35,7 +43,11 @@ nav {
 .welcome .container {
   height: 90vh;
 }
+.welcome-h1 {
+  font-family: 'Zen Antique', serif;
+}
 .welcome-heading {
+  font-size: 1.8em;
   color: var(--blue);
   font-weight: bold;
 }
@@ -60,6 +72,9 @@ nav {
 #question-section, #answer-section {
   max-height: 50vh;
   overflow-y: auto;
+}
+.question {
+  font-weight: bold;
 }
 .button-section {
   column-gap: 0.5rem;
