@@ -30,8 +30,6 @@ let setupScores = () => {
   previousScores.python = "0 / 0";
   previousScores.javascript = "0 / 0";
 
-  console.log("ALERT");
-
   localStorage.setItem("previousScores", JSON.stringify(previousScores));
   localStorage.setItem("scores", "true");
 };
@@ -508,18 +506,15 @@ let saveOption = (optId) => {
 
   if (option.checked) {
     responses[questionObjects[questionNumber].qid] = optionValue.textContent;
-    console.log(responses);
   }
 };
 
 let loadQuestion = function (qno, q) {
-  let questionSection = document.getElementById("question-section");
-  let answerSection = document.getElementById("answer-section");
 
-  console.log(qno);
-  console.log(q);
+  const questionSection = document.getElementById("question-section");
+  const answerSection = document.getElementById("answer-section");
 
-  let question = document.createElement("h5");
+  const question = document.createElement("h5");
   question.className = "question";
   question.id = "question";
   question.classList.add("unselectable");
@@ -527,7 +522,7 @@ let loadQuestion = function (qno, q) {
   questionSection.innerHTML = "";
   questionSection.appendChild(question);
 
-  let answerSectionHeading = document.createElement("h6");
+  const answerSectionHeading = document.createElement("h6");
 
   answerSection.innerHTML = "";
   answerSectionHeading.innerText = "Select one option from below";
@@ -535,13 +530,13 @@ let loadQuestion = function (qno, q) {
   answerSection.classList.add("mb-5");
   answerSection.classList.add("pb-5");
 
-  let counter = document.getElementById("question-counter");
-  let bar = document.getElementById("bar");
+  const bar = document.getElementById("bar");
+  const counter = document.getElementById("question-counter");
 
   for (let i = 0; i < q.options.length; i++) {
-    let optionContainer = document.createElement("div");
-    let option = document.createElement("input");
-    let optionLabel = document.createElement("label");
+    const optionContainer = document.createElement("div");
+    const option = document.createElement("input");
+    const optionLabel = document.createElement("label");
 
     optionContainer.className = "option-container";
     optionContainer.id = "option-container";
@@ -552,8 +547,8 @@ let loadQuestion = function (qno, q) {
     option.name = "question";
     option.innerText = q.question[i];
     
-    let optionId = `opt-${i + 1}`;
-    let labelId = `opt-lbl-${i + 1}`;
+    const optionId = `opt-${i + 1}`;
+    const labelId = `opt-lbl-${i + 1}`;
     
     option.id = optionId;
     
@@ -569,6 +564,9 @@ let loadQuestion = function (qno, q) {
       option.checked = true;
       q.checked = (i + 1);
       saveOption(optionId);
+
+      const pageItem = document.getElementById(`pi-${qno+1}`);
+      pageItem.classList.add("active");
     }
     answerSection.append(optionContainer);
   }
@@ -578,10 +576,27 @@ let loadQuestion = function (qno, q) {
     option.checked = true;
   }
 
-  counter.innerText = `Question: ${qno + 1} / ${totalQuestions}`;
+  counter.innerText = `Question: ${parseInt(qno) + 1} / ${totalQuestions}`;
   let barPercentage = ((qno + 1) / totalQuestions) * 100;
   bar.style.width = `${barPercentage}%`;
 };
+
+let loadQuestionFromPaginationButtons = (THIS, quesNum) => {
+  questionNumber = quesNum;
+  const submitBtn = document.getElementById('submit');
+  const next = document.getElementById('next');
+
+  if (questionNumber < totalQuestions - 1) {
+    submitBtn.className = "d-none";
+    next.style.display = "block";
+  }
+
+  if (questionNumber == totalQuestions - 1) {
+    next.style.display = "none";
+    submitBtn.className = "btn btn-fill btn-primary d-inline";
+  }
+  loadQuestion(quesNum, questionObjects[quesNum]);
+}
 
 let prevQuestion = () => {
   const submitBtn = document.getElementById('submit');
@@ -638,7 +653,6 @@ let testScore = () => {
   for (let i = 0; i < totalQuestions; i++) {
     let qid = questionObjects[i].qid;
 
-    console.log(responses[qid]);
     if (questionObjects[i].answer === responses[qid]) {
       points++;
     }
