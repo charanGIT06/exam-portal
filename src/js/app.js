@@ -11,11 +11,12 @@ let totalQuestions = 0;
 let test = "";
 
 class Question {
-  constructor(qid, question, options, answer) {
+  constructor(qid, question, options, answer, checked) {
     this.qid = qid;
     this.question = question;
     this.options = options;
     this.answer = answer;
+    this.checked = 0;
   }
 }
 
@@ -448,7 +449,7 @@ let setQuestions = () => {
     let options = questions[i].options;
     let answer = questions[i].answer;
 
-    questionObjects[i] = new Question(qid, question, options, answer);
+    questionObjects[i] = new Question(qid, question, options, answer, false);
   }
   totalQuestions = questionObjects.length;
 };
@@ -564,11 +565,17 @@ let loadQuestion = function (qno, q) {
 
     optionContainer.appendChild(option);
     optionContainer.appendChild(optionLabel);
-    answerSection.append(optionContainer);
-
-    option.onclick = () => {
+    optionContainer.onclick = () => {
+      option.checked = true;
+      q.checked = (i + 1);
       saveOption(optionId);
-    };
+    }
+    answerSection.append(optionContainer);
+  }
+
+  if (q.checked != 0) {
+    const option = document.getElementById(`opt-${q.checked}`);
+    option.checked = true;
   }
 
   counter.innerText = `Question: ${qno + 1} / ${totalQuestions}`;
