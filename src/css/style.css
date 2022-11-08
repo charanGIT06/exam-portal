@@ -79,7 +79,7 @@ nav {
   color: var(--blue) !important;
 }
 .active{
-  background-color: var(--blue) !important;
+  background-color: var(--lightBlue) !important;
   color: white !important;
 }
 #question-section, #answer-section {
