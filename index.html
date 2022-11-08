@@ -19,6 +19,7 @@
       <nav class="d-flex p-3">
         <a href="" class="main-heading"><p class="m-0">MCQ Zone</p></a>
         <p class="test-name ms-auto me-auto m-0" id="nav-exam-title"></p>
+        <a class="mx-3 main-heading" href="index.html">Home</a>
         <a class="submit-btn" id="submit-btn" onclick="submitConfirmation()">SUBMIT</a>
       </nav>
       <div class="welcome" id="welcome-page">
@@ -163,6 +164,32 @@
             <div class="d-flex flex-row pt-2 pb-2">
               <p id="question-counter"></p>
               <p id="timer"></p>
+            </div>
+            <div class="page-nav-container text-center">
+              <div class="page-nav" aria-label="Page navigation example">
+                <ul class="pagination mb-4">
+                  <li class="page-item ms-auto">
+                    <a class="page-link" onclick="prevQuestion()" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a id="pi-1" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">1</a></li>
+                  <li class="page-item"><a id="pi-2" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">2</a></li>
+                  <li class="page-item"><a id="pi-3" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">3</a></li>
+                  <li class="page-item"><a id="pi-4" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">4</a></li>
+                  <li class="page-item"><a id="pi-5" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">5</a></li>
+                  <li class="page-item"><a id="pi-6" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">6</a></li>
+                  <li class="page-item"><a id="pi-7" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">7</a></li>
+                  <li class="page-item"><a id="pi-8" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">8</a></li>
+                  <li class="page-item"><a id="pi-9" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">9</a></li>
+                  <li class="page-item"><a id="pi-10" class="page-link" onclick="loadQuestionFromPaginationButtons(this, parseInt(this.innerText) - 1)">10</a></li>
+                  <li class="page-item me-auto">
+                    <a class="page-link" onclick="nextQuestion()" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div
