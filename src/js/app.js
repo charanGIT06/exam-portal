@@ -709,52 +709,52 @@ let startTimer = () => {
   }, 1000);
 };
 
-let submitConfirmation = () => {
+// let submitConfirmation = () => {
 
-  const exam = document.getElementById('exam')
-  const banner = document.createElement('div');
-  const msg = document.createElement('div');
-  const btnContainer = document.createElement('div');
-  const okBtn = document.createElement('button');
-  const cancelBtn = document.createElement('button');
-  const messageText = document.createElement('h4');
+//   const exam = document.getElementById('exam')
+//   const banner = document.createElement('div');
+//   const msg = document.createElement('div');
+//   const btnContainer = document.createElement('div');
+//   const okBtn = document.createElement('button');
+//   const cancelBtn = document.createElement('button');
+//   const messageText = document.createElement('h4');
 
-  banner.classList.add("banner");
-  msg.classList.add('msg');
-  okBtn.className = "btn btn-fill btn-primary";
-  okBtn.classList.add('ok-btn');
-  okBtn.id = 'ok-btn';
-  cancelBtn.className = "btn btn-outline bg-white";
-  cancelBtn.classList.add('cancel-btn');
-  cancelBtn.id = 'cancel-btn';
-  messageText.id = "msg-txt";
-  messageText.className = "msg-txt";
+//   banner.classList.add("banner");
+//   msg.classList.add('msg');
+//   okBtn.className = "btn btn-fill btn-primary";
+//   okBtn.classList.add('ok-btn');
+//   okBtn.id = 'ok-btn';
+//   cancelBtn.className = "btn btn-outline bg-white";
+//   cancelBtn.classList.add('cancel-btn');
+//   cancelBtn.id = 'cancel-btn';
+//   messageText.id = "msg-txt";
+//   messageText.className = "msg-txt";
 
-  messageText.innerText = "Are you sure to Submit?";
-  messageText.style.padding = "2rem";
-  btnContainer.style.paddingBottom = "2rem";
-  btnContainer.classList.add("text-center")
-  okBtn.innerText = "Ok";
-  cancelBtn.innerText = "Cancel"
-  okBtn.style.margin = "0.2rem";
-  cancelBtn.style.margin = "0.2rem";
+//   messageText.innerText = "Are you sure to Submit?";
+//   messageText.style.padding = "2rem";
+//   btnContainer.style.paddingBottom = "2rem";
+//   btnContainer.classList.add("text-center")
+//   okBtn.innerText = "Ok";
+//   cancelBtn.innerText = "Cancel"
+//   okBtn.style.margin = "0.2rem";
+//   cancelBtn.style.margin = "0.2rem";
 
-  okBtn.onclick = () => {
-    banner.style.display = "none";
-    testSubmit();
-  }
-  cancelBtn.onclick = () => {
-    banner.style.display = "none";
-  }
+//   okBtn.onclick = () => {
+//     banner.style.display = "none";
+//     testSubmit();
+//   }
+//   cancelBtn.onclick = () => {
+//     banner.style.display = "none";
+//   }
   
-  btnContainer.append(cancelBtn);
-  btnContainer.append(okBtn);
-  msg.append(messageText);
-  msg.append(btnContainer);
-  banner.append(msg);
-  exam.appendChild(banner);
+//   btnContainer.append(cancelBtn);
+//   btnContainer.append(okBtn);
+//   msg.append(messageText);
+//   msg.append(btnContainer);
+//   banner.append(msg);
+//   exam.appendChild(banner);
 
-}
+// }
 
 let testSubmit = () => {
     let testZone = document.getElementById("test-zone");

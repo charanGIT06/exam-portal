@@ -62,6 +62,13 @@ nav {
 .btn {
   width: 140px;
 }
+.btn-primary {
+  background-color: var(--lightBlue) !important;
+}
+.btn-secondary {
+  background-color: rgb(235, 235, 235) !important;
+  color: var(--blue) !important;
+}
 .progress,
 .progress-bar {
   height: 2px;
