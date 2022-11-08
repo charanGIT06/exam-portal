@@ -69,6 +69,19 @@ nav {
 .progress-bar {
   background-color: var(--blue) !important;
 }
+.page-nav-container {
+  overflow-x: auto;
+}
+.page-link {
+  border-color: rgb(235, 235, 235) !important;
+}
+.page-link {
+  color: var(--blue) !important;
+}
+.active{
+  background-color: var(--lightBlue) !important;
+  color: white !important;
+}
 #question-section, #answer-section {
   max-height: 50vh;
   overflow-y: auto;
