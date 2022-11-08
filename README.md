@@ -20,7 +20,7 @@ https://mcq-zone.netlify.app/
 ### Project Photos
 1. Starting or Welcome Page
 
-![image](https://user-images.githubusercontent.com/96834040/194767129-20e003fd-95c8-4446-9a00-6f2eccc11305.png)
+![image](https://user-images.githubusercontent.com/96834040/199430113-133789a6-befb-4415-be00-1e4a39d4ded9.png)
 
 2. Language Selection Page
 
